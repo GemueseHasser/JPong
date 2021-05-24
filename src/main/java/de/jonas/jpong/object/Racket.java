@@ -17,8 +17,4 @@ public final class Racket extends Entity {
         super.setY(type.getStartPositionY());
     }
 
-    @Override
-    public void move() {
-
-    }
 }

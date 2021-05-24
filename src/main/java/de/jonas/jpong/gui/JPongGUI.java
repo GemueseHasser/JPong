@@ -3,12 +3,16 @@ package de.jonas.jpong.gui;
 import de.jonas.JPong;
 import de.jonas.japplication.graphics.GUI;
 import de.jonas.japplication.graphics.WindowType;
+import de.jonas.jpong.Entity;
+import de.jonas.jpong.object.Racket;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public final class JPongGUI extends GUI {
+public final class JPongGUI extends GUI implements KeyListener {
 
 
     private static final String TITLE = "JPong";
@@ -31,6 +35,7 @@ public final class JPongGUI extends GUI {
 
     public JPongGUI() {
         super(WINDOW_TYPE);
+        super.getFrame().addKeyListener(this);
     }
 
 
@@ -49,5 +54,29 @@ public final class JPongGUI extends GUI {
         // draw rackets
         JPong.JPONG.getPlayerRacket().draw(graphics);
         JPong.JPONG.getComputerRacket().draw(graphics);
+    }
+
+    @Override
+    public void keyTyped(final KeyEvent ignored) {
+    }
+
+    @Override
+    public void keyPressed(final KeyEvent e) {
+        if (e.getKeyCode() != KeyEvent.VK_UP && e.getKeyCode() != KeyEvent.VK_DOWN) {
+            return;
+        }
+
+        final Racket racket = JPong.JPONG.getPlayerRacket();
+
+        if (e.getKeyCode() == KeyEvent.VK_UP) {
+            racket.setY(racket.getY() - Entity.MOVING_SPEED);
+            return;
+        }
+
+        racket.setY(racket.getY() + Entity.MOVING_SPEED);
+    }
+
+    @Override
+    public void keyReleased(final KeyEvent ignored) {
     }
 }

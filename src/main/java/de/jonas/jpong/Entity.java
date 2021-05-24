@@ -10,6 +10,10 @@ import java.awt.Graphics;
 
 public abstract class Entity {
 
+
+    public static final int MOVING_SPEED = 2;
+
+
     @Getter
     private final int width;
     @Getter
@@ -36,7 +40,5 @@ public abstract class Entity {
         graphics.setColor(Color.WHITE);
         graphics.fillRect(this.x, this.y, this.width, this.height);
     }
-
-    public abstract void move();
 
 }
