@@ -6,7 +6,7 @@ import org.jetbrains.annotations.Range;
 public enum RacketType {
 
     PLAYER(
-        50
+        20
     ),
     COMPUTER(
         620
