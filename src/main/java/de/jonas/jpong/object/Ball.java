@@ -51,7 +51,7 @@ public final class Ball extends Entity {
             } else {
                 super.setX(START_X);
                 super.setY(START_Y);
-                JPong.JPONG.getComputerRacket().incrementPoints();
+                computer.incrementPoints();
             }
         }
 
@@ -61,7 +61,7 @@ public final class Ball extends Entity {
             } else {
                 super.setX(START_X);
                 super.setY(START_Y);
-                JPong.JPONG.getPlayerRacket().incrementPoints();
+                player.incrementPoints();
             }
         }
 
