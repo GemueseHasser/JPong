@@ -2,7 +2,6 @@ package de.jonas.jpong.object;
 
 import de.jonas.JPong;
 import de.jonas.jpong.Entity;
-import de.jonas.jpong.constant.RacketType;
 import de.jonas.jpong.gui.JPongGUI;
 
 import java.util.Timer;
@@ -12,6 +11,8 @@ public final class Ball extends Entity {
 
 
     private static final int SIZE = 20;
+    private static final int START_X = JPongGUI.WINDOW_TYPE.getWidth() / 2 - SIZE;
+    private static final int START_Y = JPongGUI.WINDOW_TYPE.getHeight() / 2 - SIZE;
 
 
     private int directionX = 1;
@@ -48,7 +49,9 @@ public final class Ball extends Entity {
             if (y > player.getY() && y < player.getY() + player.getHeight()) {
                 directionX = 1;
             } else {
-                System.out.println("lose");
+                super.setX(START_X);
+                super.setY(START_Y);
+                JPong.JPONG.getComputerRacket().incrementPoints();
             }
         }
 
@@ -56,7 +59,9 @@ public final class Ball extends Entity {
             if (y > computer.getY() && y < computer.getY() + computer.getHeight()) {
                 directionX = -1;
             } else {
-                System.out.println("win");
+                super.setX(START_X);
+                super.setY(START_Y);
+                JPong.JPONG.getPlayerRacket().incrementPoints();
             }
         }
 
