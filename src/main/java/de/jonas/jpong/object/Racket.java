@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
 
 public final class Racket extends Entity {
 
-    private static final int WIDTH = 50;
+    private static final int WIDTH = 30;
     private static final int HEIGHT = 150;
 
 

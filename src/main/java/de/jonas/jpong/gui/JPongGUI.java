@@ -19,7 +19,7 @@ public final class JPongGUI extends GUI implements KeyListener {
     private static final int WIDTH = 700;
     private static final int HEIGHT = 499;
 
-    private static final WindowType WINDOW_TYPE = new WindowType(
+    public static final WindowType WINDOW_TYPE = new WindowType(
         TITLE,
         WIDTH,
         HEIGHT,
@@ -54,6 +54,9 @@ public final class JPongGUI extends GUI implements KeyListener {
         // draw rackets
         JPong.JPONG.getPlayerRacket().draw(graphics);
         JPong.JPONG.getComputerRacket().draw(graphics);
+
+        // draw ball
+        JPong.JPONG.getBall().draw(graphics);
     }
 
     @Override

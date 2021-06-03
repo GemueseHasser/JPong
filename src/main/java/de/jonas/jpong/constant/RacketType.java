@@ -9,7 +9,7 @@ public enum RacketType {
         20
     ),
     COMPUTER(
-        620
+        640
     );
 
 
